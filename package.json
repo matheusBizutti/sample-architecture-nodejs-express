@@ -1,0 +1,39 @@
+{
+  "name": "sample-architecture-nodejs-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test",
+    "lint": "eslint src",
+    "start:prod": "DEBUG=* export NODE_ENV=prod node src/server.js",
+    "start:local": "DEBUG=app:* export NODE_ENV=local && nodemon src/server.js",
+    "docs": "apidoc -f ./routes -o public/apidoc"
+  },
+  "apidoc": {
+    "title": "SAMPLE NODE PROJECT ARCHITECTURE",
+    "url": "/api/v1",
+    "name": "Node Architecture",
+    "description": "API documentation"
+  },
+  "keywords": [],
+  "author": "http://github.com/matheusbizutti",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.28"
+  },
+  "devDependencies": {
+    "apidoc": "^0.24.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "prettier": "^2.0.5"
+  }
+}
