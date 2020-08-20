@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test",
     "lint": "eslint src",
-    "start:prod": "DEBUG=* export NODE_ENV=prod && node src/server.js",
+    "start:prod": "DEBUG=* && node src/server.js",
     "start:local": "DEBUG=app:* export NODE_ENV=local && nodemon src/server.js",
     "docs": "apidoc -f ./routes -o public/apidoc"
   },

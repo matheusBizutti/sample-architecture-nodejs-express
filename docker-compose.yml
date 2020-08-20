@@ -1,0 +1,73 @@
+version: '3'
+services: 
+  nginx:
+    build:
+      dockerfile: ./docker/nginx.dockerfile
+      context: .
+    image: matheusbizutti/nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    networks: 
+      - production-network
+    depends_on: 
+      - "node1"
+      - "node2"
+      - "node3"
+
+  mongodb:
+    image: mongo
+    networks: 
+      - production-network
+
+  node1:
+    build:
+      dockerfile: ./docker/node.dockerfile
+      context: .
+    image: matheusbizutti/node-sample-prj
+    container_name: node1
+    ports:
+      - "3000"
+    networks: 
+      - production-network
+    depends_on: 
+      - "mongodb"
+    environment:
+      - URL_DATABASE=mongodb://127.0.0.1:27017/sample-architecture&retryWrites=false
+      - NODE_ENV=prod
+      
+  node2:
+    build:
+      dockerfile: ./docker/node.dockerfile
+      context: .
+    image: matheusbizutti/node-sample-prj
+    container_name: node2
+    ports:
+      - "3000"
+    networks: 
+      - production-network
+    depends_on: 
+      - "mongodb"
+    environment:
+      - URL_DATABASE=mongodb://127.0.0.1:27017/sample-architecture&retryWrites=false
+      - NODE_ENV=prod
+
+  node3:
+    build:
+      dockerfile: ./docker/node.dockerfile
+      context: .
+    image: matheusbizutti/node-sample-prj
+    container_name: node3
+    ports:
+      - "3000"
+    networks: 
+      - production-network
+    depends_on: 
+      - "mongodb"
+    environment:
+      - URL_DATABASE=mongodb://127.0.0.1:27017/sample-architecture&retryWrites=false
+      - NODE_ENV=prod
+    
+networks: 
+  production-network:
+    driver: bridge
