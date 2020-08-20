@@ -90,7 +90,7 @@ typings/
 # Build files
 dist
 
-public/apidoc
+api/apidoc
 
 /src/https-config/certificates/cert.pem
 /src/https-config/certificates/key.pem

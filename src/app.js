@@ -13,6 +13,7 @@ const app = express();
 require('./database/database-start');
 
 app.use(express.static('public'));
+app.use(express.static('api'));
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

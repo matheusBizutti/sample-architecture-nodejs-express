@@ -33,9 +33,9 @@ services:
     depends_on: 
       - "mongodb"
     environment:
-      - URL_DATABASE=mongodb://127.0.0.1:27017/sample-architecture&retryWrites=false
+      - URL_DATABASE=mongodb://mongodb:27017/sample-architecture&retryWrites=false
       - NODE_ENV=prod
-      
+
   node2:
     build:
       dockerfile: ./docker/node.dockerfile
