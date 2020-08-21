@@ -47,11 +47,14 @@ set DEBUG=app:* to show all logs just application
 
 ## Generate HTTPS Certificate
 
-access: `src/https-config/certificates` and run the commands in sequence:
+access: `src/https-config/` and mkdir `certificates` and run the commands in sequence:
 ```
 openssl genrsa -out key.pem
 openssl req -new -key key.pem -out csr.pem
 openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
 rm csr.pem
 ```
-``.
+
+## View the file - env.sample
+
+and create the variables in new .env file
