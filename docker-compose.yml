@@ -37,6 +37,7 @@ services:
     environment:
       - URL_DATABASE_PROD=mongodb://mongodb:27017/sample-architecture
       - NODE_ENV=prod
+      - DEBUG=*
     volumes:
       - .:/var/www
 
@@ -55,6 +56,7 @@ services:
     environment:
       - URL_DATABASE_PROD=mongodb://mongodb:27017/sample-architecture
       - NODE_ENV=prod
+      - DEBUG=*
     volumes:
       - .:/var/www
 
@@ -73,6 +75,7 @@ services:
     environment:
       - URL_DATABASE_PROD=mongodb://mongodb:27017/sample-architecture
       - NODE_ENV=prod
+      - DEBUG=*
     volumes:
       - .:/var/www
     

@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 const debugServer = debug('app:server');
 
-if (process.env.NODE_ENV === 'local') {
+if (process.env.NODE_ENV === 'development') {
   https.createServer(httpsOptions, app).listen(port, () => {
     debugServer(`Sample server is running with https on port: ${port}`);
   });
